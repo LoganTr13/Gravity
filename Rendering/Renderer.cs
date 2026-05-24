@@ -1,4 +1,5 @@
 ﻿using OpenTK.Graphics.OpenGL4;
+using Gravity.Rendering.Shaders;
 
 namespace Gravity.Rendering
 {
@@ -10,14 +11,13 @@ namespace Gravity.Rendering
 
         public Renderer (int shaderProgram, int vao, int vertexCount)
         {
-            _shaderProgram = shaderProgram;
             _vao = vao;
             _vertexCount = vertexCount;
         }
 
         public void Draw() 
         {
-            GL.UseProgram(_shaderProgram);
+
             GL.BindVertexArray(_vao);
 
             GL.DrawArrays(
